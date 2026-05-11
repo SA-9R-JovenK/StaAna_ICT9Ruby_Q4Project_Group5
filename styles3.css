@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+:root {
+    --primary: #BE5103;    
+    --primary-dark: #B7410E;
+    --secondary: #069494;   
+    --accent: #FFCE1B;      
+    --bg-dark: #0a0c10;
+    --panel-bg: rgba(20,20,20,0.95);
+    --text-light: #ddd;
+}
+
+body {
+    background: url("Pressure.jpg") center/cover no-repeat;
+}
+
+.back{
+    color: #3a3a3a;
+}
+.pyro {
+    color: #bf772c;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(to right, var(--primary) 40%,var(--primary-dark) 70%,var(--secondary) 120%);
+    border-bottom: 2px solid var(--accent);
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.nav-links a {
+    color: #f3f3f3;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 8px rgba(6,148,148,0.6);
+}
+
+
+h1 {
+    text-align: center;
+    color: var(--primary-dark);
+}
+
+
+.contract-hud {
+    width: 1000px;
+    margin: 40px auto;
+    padding: 15px;
+    background: transparent;
+    border: 6px solid #2f2f2f;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+.contract-hud::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: radial-gradient( circle at center, #2a2a2a,#141313);
+    z-index: -1;
+}
+.hud-header {
+    display: flex;
+    justify-content: space-between;
+    color: #bbb;
+    font-size: 14px;
+}
+.hud-bottom {
+    position: relative;
+    height: 120px;
+    width: 100%;
+    overflow: hidden;
+    background: #1a1a1a;
+    border-top: 2px solid #3a3a3a;
+}
+.hud-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.hud-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+    background: linear-gradient(to bottom,#2a2a2a,#121212); 
+    display: block;
+    pointer-events: none;
+}
+.path {
+    color: var(--primary);
+    font-family: monospace;
+}
+
+
+.contract-map {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.map-bg {
+    position: absolute;
+    inset: 0;
+    background: url("HudBg.png") center/cover no-repeat;
+    opacity: 0.25;
+}
+.contract-map::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+
+    background-size: 120px 120px;
+}
+
+.lines {
+    position: absolute;
+    inset: 0;
+}
+.lines line {
+    stroke: var(--primary);
+    stroke-width: 4;
+    filter: drop-shadow(0 0 4px rgba(190,81,3,0.5));
+}
+
+.node {
+    position: absolute;
+    z-index: 10;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.node.unlocked {
+    background: #111;
+    border: 3px solid var(--secondary);
+}
+.node.locked {
+    background: #333;
+    border: 3px solid #646464;
+    filter: grayscale(100%) brightness(0.5);
+}
+.node img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+
+    padding: 6px;
+    background: #111;
+}
+.node:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px var(--secondary);
+}
+
+.info-box {
+    position: fixed;
+    width: 220px;
+    display: none;
+    background: var(--panel-bg);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 12px;
+    color: var(--text-light);
+    font-size: 13px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    z-index: 9999;
+}
+.info-box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 8px solid transparent;
+}
+.info-box[data-side="right"]::after {
+    left: -16px;
+    border-right-color: var(--accent);
+}
+.info-box[data-side="left"]::after {
+    right: -16px;
+    border-left-color: var(--accent);
+}
+
+.contract-panel {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 260px;
+    background: rgba(15,15,15,0.95);
+    border: 2px solid #2f2f2f;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+.contract-panel.hidden {
+    display: none;
+}
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--accent);
+}
+.panel-section h4 {
+    color: var(--secondary);
+}
+
+.complete-btn {
+    width: 100%;
+    padding: 8px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    border: none;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+}
+.complete-btn:hover {
+    transform: scale(1.05);
+}
+
+
+
+.loaner {
+    margin-top: 8px;
+}
+.loaner-item {
+    margin-top: 4px;
+    padding: 6px;
+
+    background: #a66623(6,148,148,0.15);
+    border: 1px solid var(--secondary);
+
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+}

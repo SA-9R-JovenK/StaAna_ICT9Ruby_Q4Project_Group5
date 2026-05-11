@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contracts</title>
+
+<link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+
+    <header class="header">
+
+    <div class="logo">
+        <img src="Logo.png" alt="School Logo" width="100" height="100">
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="index4.html">Topics</a></li>
+            <li><a href="index3.html">Contracts</a></li>
+            <li><a href="index5.html">Profile</a></li>
+            <li><a href="index.html">Sign Out</a></li>
+
+        </ul>
+    </nav>
+
+</header>
+<h1 class="title">ConTracker</h1>
+
+<div class="contract-hud">
+
+
+    <div class="hud-header">
+
+        <a href="index2.html" class="back-btn">&lt;&lt; back</a>
+        <a href="https://wiki.teamfortress.com/wiki/Pyroland_Contracts"class="path pyro"target="_blank">./root/pyroland/contracts/</a>
+
+    </div>
+
+    <div class="contract-map">
+
+        <div class="map-bg"></div>
+
+        <svg class="lines" viewBox="0 0 900 500" preserveAspectRatio="none">
+            <line x1="150" y1="120" x2="400" y2="150"/>
+            <line x1="400" y1="150" x2="700" y2="250"/>
+            <line x1="150" y1="120" x2="350" y2="300"/>
+            <line x1="350" y1="300" x2="700" y2="250"/>
+            <line x1="680" y1="220" x2="580" y2="400"/>
+        </svg>
+
+
+        <div class="node unlocked"style="top: 90px; left: 120px;"onclick="toggleInfo(0, event)"><img src="Crab.webp"></div>
+        <div class="node unlocked"style="top: 120px; left: 370px;"onclick="toggleInfo(1, event)"><img src="Shrimp.webp"></div>
+        <div class="node unlocked"style="top: 260px; left: 320px;"onclick="toggleInfo(2, event)"><img src="Prawn.jpg"></div>
+        <div class="node unlocked"style="top: 220px; left: 680px;"onclick="toggleInfo(3, event)"><img src="MantisShrimp.jpg"></div>
+        <div class="node unlocked"style="top: 400px; left: 580px;"onclick="toggleInfo(4, event)"><img src="PistolShrimp.jpg"></div>
+
+        <div class="node unlocked"style="bottom: 30px; left: 40px;"onclick="toggleInfo(5, event)"><img src="Pyroshark.webp" alt="Mastery"></div>
+
+        <div id="info-box" class="info-box"></div>
+
+    </div>
+
+    <div class="hud-bottom">
+    <img src="HudBottom.png" class="hud-bg">
+
+    <div class="hud-overlay">
+        <div class="hud-progress"><div class="progress-fill"></div></div>
+    </div>
+
+</div>
+
+
+<script src="script3.js"></script>
+</body>
+</html>

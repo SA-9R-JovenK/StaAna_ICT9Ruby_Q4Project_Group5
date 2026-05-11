@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="split-layout">
+
+    <div class="left-panel">
+
+        <form id="loginForm" onsubmit="return login()">
+
+            <h1>Login</h1>
+            <p class="subtext">Enter your account details</p>
+
+            <input type="text" id="username" placeholder="Username">
+
+            <input type="email" id="email" placeholder="Email Adress">
+            <input type="password" id="password" placeholder="Password">
+
+            <a href="#" class="forgot">Forgot Password?</a>
+
+            <button type="submit">Login</button>
+
+            <p id="error-msg" class="message"></p>
+
+            <div class="bottom-text">
+                <span>Don’t have an account?</span>
+                <a href="#">Sign up</a>
+            </div>
+
+            <button type="button" onclick="toggleImagePopup()" class="preview-btn"> View Student ID</button>
+
+    <div id="form-message" class="form-message"></div>
+
+        </form>
+
+    </div>
+
+    <div class="right-panel">
+
+        <div class="right-content">
+            <h1>Welcome to<br>The Shrimp Login Portal</h1>
+            <p>Login to access your account</p>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="imagePopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <span class="close-btn" onclick="toggleImagePopup()">×</span>
+
+        <img src="Makabebe.jpg" alt="Preview Image">
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

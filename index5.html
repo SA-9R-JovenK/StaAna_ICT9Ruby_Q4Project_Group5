@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="styles5.css">
+</head>
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <img src="Logo.png" alt="School Logo" width="100" height="100">
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="index4.html">Topics</a></li>
+            <li><a href="index3.html">Contracts</a></li>
+            <li><a href="index5.html">Profile</a></li>
+            <li><a href="index.html">Sign Out</a></li>
+
+        </ul>
+    </nav>
+    </header>
+
+    <div class="profile-page">
+
+    <div class="top-section">
+
+        <div class="profile-left">
+
+            <div class="profile-image-container">
+            <img src="mantishrimp.webp" class="profile-pic" id="profile-pic">
+            <input type="file" id="profile-upload" accept="image/*" hidden>
+            <button class="upload-btn"onclick="document.getElementById('profile-upload').click()">Change Picture</button>
+            </div>
+
+            <div class="profile-info">
+                <h1 id="display-user">Jonathan Makabebe</h1>
+                <p class="bio">Shrimp Shrimp Shrimp</p>
+
+            </div>
+
+        </div>
+
+            <div class="profile-right">
+
+                <div class="level-box">
+                    <span class="level-text">Level</span>
+                    <div class="level-circle">9</div>
+                </div>
+
+                <button class="edit-btn">
+                    Edit Profile
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="content-area">
+
+            <div class="main-panel">
+
+                <div class="panel-title">
+                    Recent Contracts
+                </div>
+
+                <div class="activity-card">
+
+                    <img src="Crab.webp" class="activity-img">
+
+                    <div class="activity-info">
+
+                        <h2>|Quarter 1: Crustaceans|</h2>
+
+                        <p>
+                            You have aquired ⭐ 3, and the Crab Cage
+                        </p>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="activity-card">
+
+                    <img src="NeonAnnihilator.jpg" class="activity-img">
+
+                    <div class="activity-info">
+
+                        <h2>|Quarter 2: Variants|</h2>
+
+                        <p>
+                            You have aquired ⭐ 20, The Gas Passer, and the Neon Annihilator
+                        </p>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill fill2"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="side-panel">
+
+                <h2 class="side-title">
+                    Account Details
+                </h2>
+
+                <div class="credential-box">
+
+                    <p>
+                        <span>Username:</span>
+                        <span id="cred-user">---</span>
+                    </p>
+
+                    <p>
+                        <span>Email:</span>
+                        <span id="cred-email">---</span>
+                    </p>
+
+                    <p>
+                        <span>Password:</span>
+                        <span id="cred-pass">---</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <footer class="text-center text-light mt-4">
+        <p>|Hipon High | 9-Ruby | PyroShrimp Industries|</p>
+        <p>Guce | Gan | Teylan | Joven | Licuanan</p>
+    </footer>
+
+    <script src="script5.js"></script>
+
+</body>
+</html>

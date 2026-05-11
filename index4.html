@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topics</title>
+
+<link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+
+    <header class="header">
+
+    <div class="logo">
+        <img src="Logo.png" alt="School Logo" width="100" height="100">
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="index4.html">Topics</a></li>
+            <li><a href="index3.html">Contracts</a></li>
+            <li><a href="index5.html">Profile</a></li>
+            <li><a href="index.html">Sign Out</a></li>
+
+        </ul>
+    </nav>
+    </header>
+
+<div class="crafting-container">
+
+    <div class="craft-left">
+
+        <div class="quarter-grid">
+
+    <div class="quarter active-quarter"
+         onclick="loadQuarter(0)">
+        <span>Q1</span>
+    </div>
+
+    <div class="quarter"
+         onclick="loadQuarter(1)">
+        <span>Q2</span>
+    </div>
+
+    <div class="quarter"
+         onclick="loadQuarter(2)">
+        <span>Q3</span>
+    </div>
+
+    <div class="quarter"
+         onclick="loadQuarter(3)">
+        <span>Q4</span>
+    </div>
+
+</div>
+
+        <div class="lesson-section">
+
+            <h3>Topics</h3>
+
+            <div id="lesson-list" class="lesson-list">
+
+                <div class="lesson-item active-lesson"
+                     onclick="selectLesson(0)">
+                    What are Invertebrates?
+                </div>
+
+                <div class="lesson-item"
+                     onclick="selectLesson(1)">
+                    What are Arthropods?
+                </div>
+
+                <div class="lesson-item"
+                     onclick="selectLesson(2)">
+                    What are Crustaceans?
+                </div>
+
+                <div class="lesson-item"
+                     onclick="selectLesson(3)">
+                    Shrimp Of Today
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="craft-right">
+
+        <h2 id="lesson-title">
+            What are Invertebrates?
+        </h2>
+
+        <div class="lesson-preview">
+
+            <img id="lesson-image"
+                 src="Login.jpg"
+                 alt="Lesson Image">
+
+        </div>
+
+        <p id="lesson-description">
+            Learn about animals without backbones and how
+            they make up most living species on Earth.
+        </p>
+
+        <button class="open-btn"onclick="openLesson()">Research</button>
+
+    </div>
+
+</div>
+
+<script src="script4.js"></script>
+
+</body>
+</html>
